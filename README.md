@@ -1,13 +1,27 @@
 # rpi-nas
-Scripts used to setup raspberry pi 4 as a home NAS-server.
+This repository contains the scripts and configuration files to turn your Raspberry pi 4 into a NAS.
+
+## Requirements
+This are the requirements in order to use these scripts
+
+- Raspberry pi 4
+- microSD cart
+- Quad SATA kit
+- 4x 2.5 inch hdd 
 
 ## Installation
+**Note**: replace the git clone links with **yours**.
+
+**Warning DO NOT run the `setup.sh` script if you do not fully understand what it does. Seriously, DON'T!**
+
+```
     $ git clone https://gitlab.com/sudo_TuX/rpi-nas
     $ chmod +x rpi-nas/*.sh
     $ .rpi-nas/setup.sh
+```
 
-## NAS/scripts/setup.sh
-This is the setup script that will turn you r rpi in to a home NAS.
+## rpi-nas/setup.sh
+This is the setup script that will turn your rpi in to a home NAS.
 
 The following packages will be installed after running the script:
 - Grafana with prometheus and node-exporter
