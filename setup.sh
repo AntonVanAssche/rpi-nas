@@ -1,62 +1,87 @@
 #!/bin/bash
 
+# Main install script
+
 # Colors
+bold="\e[1m"
 cyan="\e[96m"
 red="\e[91m"
-reset="\e[39m"
+reset="\e[0m"
 
 cd $HOME
 echo -e "[i] ${cyan}This script will setup the pi as a home server ${reset}"
 echo
 
 echo -e "[?] ${cyan}Is this the first or second time you run the script?${reset}"
-read -p "[first/second]" run_time
-        if [[ $run_time = first ]] ; then
+read -p "[first/second] " run_time
+	if [[ $run_time = first ]] ; then
+
+		echo
 
 		# Install NECESSARY packages
-		source ./NAS/packages.sh
+		source ./rpi-nas/packages.sh
 		echo
 
 	elif [[ $run_time = second ]] ; then
+
+		echo
+
 		# Dotfiles setup
-		source ./NAS/dotfiles.sh
+		source ./rpi-nas/dotfiles.sh
 		echo
 
 		# Static ip setup
-		source ./NAS/ip.sh
+		source ./rpi-nas/ip.sh
 		echo
 
 		# RAID 5 configuration
-		source ./NAS/raid.sh
+		source ./rpi-nas/raid.sh
 		echo
 
 		# Samba share setup
-		source ./NAS/samba.sh
+		source ./rpi-nas/samba.sh
 		echo
 
 		# Nextcloud setup
-		source ./NAS/nextcloud.sh
+		source ./rpi-nas/nextcloud.sh
 		echo
 
-		# website setup (APache2 required)
-		source ./website.sh
+		# website setup (Apache required)
+		source ./rpi-nas/website.sh
 		echo
 		
 		# Grafana setup (system monitoring)
-		source ./NAS/grafana.sh
+		source ./rpi-nas/grafana.sh
+		echo
+
+		# Pihole setup
+		source ./rpi-nas/pihole.sh
+		echo
+
+		# Pivpn setup
+		source ./rpi-nas/pivpn.sh
 		echo
 
 	else
         
-		echo -e "[!]${red} $run_time is not a valid option!${reset}"
+		echo
+		echo -e "[!] ${red}Script failed to run.${reset}"
+		echo -e "[!] ${red}Invalid argument! ${bold}($run_time)${reset}"
+		
+		# Exit code: invalid argument to exit
 		exit 128
+
 	fi
 
 echo -e "[?] ${cyan}Do you want to reboot the system? (recommended)${reset}"
 read -p "[y/n] " reboot
 	if [[ $reboot = y || $reboot = Y ]] ; then
+
 		sleep 2
 		sudo systemctl reboot
-        elif [[ $reboot = n || $reboot = N ]] ; then
+
+    else
+		
 		echo -e "${cyan}[i] System won't rebooten!${reset}"
+
 	fi

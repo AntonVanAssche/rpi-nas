@@ -2,9 +2,12 @@
 Description=Node Exporter
 
 [Service]
+User=pi
+Restart=on-failure
 # Provide a text file location for https://github.com/fahlke/raspberrypi_exporter data with the
 # --collector.textfile.directory parameter.
-ExecStart=/home/pi/node_exporter --collector.textfile.directory /var/lib/node_exporter/textfile_collector
+ExecStart=/home/pi/node_exporter/node_exporter --collector.textfile.directory /var/lib/node_exporter/textfil
+e_collector
 
 [Install]
 WantedBy=multi-user.target

@@ -1,8 +1,8 @@
 #!/bin/bash
 
 echo -e "[i] ${cyan}Updating system cache...${reset}"
-        sudo apt update &> /null/dev
-        sudo apt upgrade -y &> /null/dev
+        sudo apt update &> /dev/null
+        sudo apt upgrade -y &> /dev/null
 
 echo -e "[i] ${cyan}Installing samba...${reset}"
         sudo apt-get install samba samba-common-bin -y
