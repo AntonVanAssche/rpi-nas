@@ -28,7 +28,7 @@ echo -e "[i] ${cyan}Installing grafana. ${reset}"
 	wget https://dl.grafana.com/oss/release/grafana-$VERSION_GRAFANA.linux-armv7.tar.gz
 	tar xfz grafana-$VERSION_GRAFANA.linux-armv7.tar.gz
 	rm -rf grafana-$VERSION_GRAFANA.linux-armv7.tar.gz
-	mv grafana-$VERSION_GRAFANA/grafana/
+	mv grafana-$VERSION_GRAFANA/ grafana/
 	sudo cp -r rpi-nas/config_files/grafana.service /etc/systemd/system/
 	sudo systemctl daemon-reload
 	sudo systemctl start grafana
