@@ -7,8 +7,21 @@ bold="\e[1m"
 cyan="\e[96m"
 red="\e[91m"
 reset="\e[0m"
+RELEASE="$(lsb_release -ds)"
 
+# Script
 cd $HOME
+
+# Check if OS is supported (Raspbian, Ubuntu, Debian)
+if [[ $RElEASE != "Raspbian GNU/Linux 10 (buster)" || $RELEASE != "Ubuntu 20.10" || $RELEASE != "Debian GNU/Linux 10 (buster)" ]]; then
+
+    echo
+    echo -e "[!] ${red}$RELEASE not supported${reset}"
+    echo
+    exit 1
+
+fi
+
 echo -e "[i] ${cyan}This script will setup the pi as a home server ${reset}"
 echo
 
