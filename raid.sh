@@ -22,14 +22,15 @@ echo -e "[i] ${cyan}Setting up raid...${reset}"
 
 	# Create File system
 	sudo mkfs.ext4 -v -m .1 -b 4096 -E stride=32,stripe-width=64 /dev/md0
-	sudo mount /dev/md0 /var/www/html/nextcloud
+	sudo mount /dev/md0 /mnt/nas/
 
 	# Backup /etc/fstab
 	sudo cp /etc/fstab /etc/fstab.bak
 
+# Mount disks on boot
 echo -e "[?] ${cyan}What is the UUID of the RAID partition? (example: 394fd8f2-7b2a-474f-8e58-48b81a6ca8fb)${reset}"
 read -p "UUID: " UUID
-	sudo echo "UUID=$UUID /mnt ext4 defaults 0 0"  >> /etc/fstab
+	sudo echo "UUID=$UUID /mnt/nas ext4 defaults 0 0"  >> /etc/fstab
 
 # Set permissions
 sudo chown -R pi:pi /mnt
