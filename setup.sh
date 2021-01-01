@@ -55,10 +55,6 @@ read -p "[first/second] " run_time
 		source ./rpi-nas/samba.sh
 		echo
 
-		# Nextcloud setup
-		source ./rpi-nas/nextcloud.sh
-		echo
-
 		# website setup (Apache required)
 		source ./rpi-nas/website.sh
 		echo
