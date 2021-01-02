@@ -4,8 +4,7 @@ This repository contains the scripts and configuration files to turn your Raspbe
 
 ## Requirements
 
-This are the requirements in order to use these scripts
-
+The following hardware is required to use this scripts:
 - Raspberry pi 4
 - microSD cart
 - Quad SATA kit
@@ -20,25 +19,23 @@ This are the requirements in order to use these scripts
 ```
 $ git clone https://gitlab.com/sudo_TuX/rpi-nas
 $ chmod +x rpi-nas/*.sh
-$ .rpi-nas/setup.sh
+$ ./rpi-nas/setup.sh
 ```
 
-## rpi-nas/setup.sh
+## Programs
 
-This is the setup script that will turn your rpi in to a home NAS.
+| Name  | Usage |
+| ------------- | ------------- |
+| [Grafana](https://github.com/grafana/grafana) | Data visualization platform |
+| [Prometheus](https://github.com/prometheus/prometheus) | Data scource for Grafana |
+| [Node-exporter](https://github.com/prometheus/node_exporter) | Exporter for machine metrics |
+| [Apache](https://github.com/ceph/apache2) |  Apache HTTP Server |
+| [Vim](https://github.com/vim/vim) | Text editor |
+| [SATA-hat software](https://github.com/akgnah/rockpi-sata) | Necessary software in order to use the SATA hat |
+| [Pihole](https://github.com/pi-hole/pi-hole) | The Pi-hole® is a DNS sinkhole that protects your devices from unwanted content |
+| [Pivpn](https://github.com/pivpn/pivpn) | Vpn for Raspberry Pi |
 
-The following packages will be installed after running the script:
-- [Grafana](https://github.com/grafana/grafana)
-- [Prometheus](https://github.com/prometheus/prometheus)
-- [Node-exporter](https://github.com/prometheus/node_exporter)
-- [Apache](https://github.com/ceph/apache2)
-- [Vim](https://github.com/vim/vim)
-- [wget](https://github.com/jay/wget)
-- [curl](https://github.com/curl/curl)
-- [htop](https://github.com/hishamhm/htop)
-- [SATA-hat software](https://github.com/akgnah/rockpi-sata)
-- [Pihole](https://github.com/pi-hole/pi-hole)
-- [Pivpn](https://github.com/pivpn/pivpn)
+## Configurations
 
 The following will be configured after running the script:
 - Dotfiles
@@ -46,12 +43,6 @@ The following will be configured after running the script:
 - Raid 5
 - Samba share
 - website
-	
-## Pictures
-
-![enter image description here](https://cdn.shopify.com/s/files/1/0021/1497/7894/products/20200316_170115_grande.jpg?v=1600062159)
-
-Source: https://shop.allnetchina.cn/products/quad-sata-hat-case-for-raspberry-pi-4
 
 ## Feedback
 
