@@ -6,8 +6,7 @@ User=root
 Restart=on-failure
 # Provide a text file location for https://github.com/fahlke/raspberrypi_exporter data with the
 # --collector.textfile.directory parameter.
-ExecStart=/usr/sbin/node_exporter/node_exporter --collector.textfile.directory /var/lib/node_exporter/textfil
-e_collector
+ExecStart=/usr/sbin/node_exporter/node_exporter --collector.textfile.directory /var/lib/node_exporter/textfile_collector
 
 [Install]
 WantedBy=multi-user.target
