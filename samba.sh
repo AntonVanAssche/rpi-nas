@@ -17,7 +17,7 @@ sudo cp /etc/samba/smb.conf /etc/samba/smb.conf.bak
 sudo echo "
 # NAS Share
 [NAS]
-path = /mnt
+path = /mnt/nas/
 comment = RasPi NAS Share
 valid users = pi
 writable = yes

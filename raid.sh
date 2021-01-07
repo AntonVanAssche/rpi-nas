@@ -22,7 +22,8 @@ echo -e "[i] ${cyan}Setting up raid...${reset}"
 
 	# Create File system
 	sudo mkfs.ext4 -v -m .1 -b 4096 -E stride=32,stripe-width=64 /dev/md0
-	sudo mount /dev/md0 /mnt/nas/
+	sudo mkdir /mnt/nas
+    sudo mount /dev/md0 /mnt/nas/
 
 	# Backup /etc/fstab
 	sudo cp /etc/fstab /etc/fstab.bak
@@ -33,5 +34,5 @@ read -p "UUID: " UUID
 	sudo echo "UUID=$UUID /mnt/nas ext4 defaults 0 0"  >> /etc/fstab
 
 # Set permissions
-sudo chown -R pi:pi /mnt
-sudo chmod -R 0777 /mnt
+sudo chown -R pi:pi /mnt/nas/
+sudo chmod -R 0777 /mnt/nas/
