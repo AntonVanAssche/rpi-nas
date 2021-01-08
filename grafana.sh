@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Versions
-VERSION_GRAFANA='7.3.5'
-VERSION_PROMETHEUS='2.23.0'
+VERSION_GRAFANA='7.3.6'
+VERSION_PROMETHEUS='2.24.0'
 VERSION_NODE_EPORTER='1.0.1'
 
 echo -e "[i] ${cyan}Installing grafana/prometheus. ${reset}"
