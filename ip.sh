@@ -2,12 +2,12 @@
 
 # Input variables
 echo "[?] ${cyan}choose an IP address (example: 192.168.0.100)${reset}"
-read "IP address: " ip_address
+read -p "IP address: " ip_address
 echo "[?] ${cyan}choose a gateway (example: 192.168.0.1)${reset}"
-read "Gateway: " gateway
+read -p "Gateway: " gateway
 echo "[?] ${cyan}Choose the default and secondary DNS server (example: 1.1.1.1 1.0.0.1)${reset}"
-read "DNS server 1: " DNS1
-read "DNS server 2: " DNS2
+read -p "DNS server 1: " DNS1
+read -p "DNS server 2: " DNS2
 
 # echo >> /etc/dhcpcd.conf
 echo -e "[i] ${cyan}Configuring static IP. ${reset}"
