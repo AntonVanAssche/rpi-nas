@@ -29,6 +29,7 @@ echo -e "[i] ${cyan}Setting up raid...${reset}"
 	sudo cp /etc/fstab /etc/fstab.bak
 
 # Mount disks on boot
+sudo fdisk -l
 echo -e "[?] ${cyan}What is the UUID of the RAID partition? (example: 394fd8f2-7b2a-474f-8e58-48b81a6ca8fb)${reset}"
 read -p "UUID: " UUID
 	sudo echo "UUID=$UUID /mnt/nas ext4 defaults 0 0"  >> /etc/fstab
