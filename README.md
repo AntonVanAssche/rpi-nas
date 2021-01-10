@@ -30,9 +30,10 @@ $ ./rpi-nas/setup.sh
 | [Prometheus](https://github.com/prometheus/prometheus) | Data scource for Grafana |
 | [Node-exporter](https://github.com/prometheus/node_exporter) | Exporter for machine metrics |
 | [Apache](https://github.com/ceph/apache2) |  Apache HTTP Server |
+| [Samba](https://github.com/samba-team/samba) | File sharing software using the SMB-protocol |
 | [Vim](https://github.com/vim/vim) | Text editor |
 | [SATA-hat software](https://github.com/akgnah/rockpi-sata) | Necessary software in order to use the SATA hat |
-| [Pihole](https://github.com/pi-hole/pi-hole) | The Pi-hole® is a DNS sinkhole that protects your devices from unwanted content |
+| [Pihole](https://github.com/pi-hole/pi-hole) | DNS level ad blocking software |
 | [Pivpn](https://github.com/pivpn/pivpn) | Vpn for Raspberry Pi |
 
 ## Configurations
