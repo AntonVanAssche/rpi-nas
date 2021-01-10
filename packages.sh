@@ -17,3 +17,5 @@ echo -e "[i] ${cyan}Installing SATA-hat software...${reset}"
 	wget -q https://rock.sh/get-rockpi-sata -P rpi-nas/get-rockpi-sata/
 	sudo chmod +x rpi-nas/get-rockpi-sata/get-rockpi-sata
 	source ./rpi-nas/get-rockpi-sata/get-rockpi-sata
+    sudo mv config_files/rockpi-sata.conf /etc/
+    sudo chown root:root /etc/rockpi-sata.conf
