@@ -7,16 +7,21 @@ bold="\e[1m"
 cyan="\e[96m"
 red="\e[91m"
 reset="\e[0m"
-RELEASE="$(lsb_release -ds)"
+RELEASE="$(lsb_release -is)"
 
 # Script
 cd $HOME
 
 # Check if OS is supported (Raspbian, Ubuntu, Debian)
-if [[ $RElEASE != "Raspbian GNU/Linux 10 (buster)" || $RELEASE != "Ubuntu 20.10" || $RELEASE != "Debian GNU/Linux 10 (buster)" ]]; then
+if [[ $RELEASE == "Raspbian" || $RELEASE == "Ubuntu" || $RELEASE == "Debian" ]]; then
 
     echo
-    echo -e "[!] ${red}$RELEASE not supported${reset}"
+    echo -e "[i] ${cyan}$RELEASE is supported${reset}"
+
+else
+
+    echo
+    echo -e "[!] ${red}$RELEASE is not supported${reset}"
     echo
     exit 1
 
