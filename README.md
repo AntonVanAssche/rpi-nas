@@ -4,9 +4,9 @@ This repository contains the scripts and configuration files to turn your Raspbe
 
 ## Requirements
 
-The following hardware is required to use this scripts:
+The following hardware is **required** to use these scripts:
 - Raspberry pi 4
-- microSD cart
+- microSD card
 - Quad SATA kit
 - 4x 2.5 inch hdd 
 
@@ -38,7 +38,7 @@ $ ./rpi-nas/setup.sh
 
 ## Configurations
 
-The following will be configured after running the script:
+The following will be configured after running these scripts:
 - Dotfiles
 - Static IP
 - Raid 5
