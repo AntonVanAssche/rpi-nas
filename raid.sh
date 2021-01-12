@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo -e "[i] ${cyan}Updating system cache...${reset}"
-	sudo apt update &> /null/dev
+	sudo apt update &> /dev/null
 
 echo -e "[i] ${cyan}Installing mdadm...${reset}"
 	sudo apt-get install mdadm -y
