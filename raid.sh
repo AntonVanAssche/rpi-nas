@@ -31,4 +31,4 @@ echo -e "[i] ${cyan}Setting up raid...${reset}"
 
 # Set permissions
 sudo chown -R pi:pi /mnt/nas/
-sudo chmod -R 0777 /mnt/nas/
+sudo chmod -R 0755 /mnt/nas/

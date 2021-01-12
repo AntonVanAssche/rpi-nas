@@ -22,8 +22,8 @@ comment = RasPi NAS Share
 valid users = pi
 writable = yes
 browsable = yes
-create mask = 0777
-directory mask = 0777" >> /etc/samba/smb.conf
+create mask = 0644
+directory mask = 0755" >> /etc/samba/smb.conf
 
 # Restarting samba
 sudo systemctl restart smbd
