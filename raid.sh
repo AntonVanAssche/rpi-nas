@@ -26,7 +26,7 @@ echo -e "[i] ${cyan}Setting up raid...${reset}"
     sudo mount /dev/md0 /mnt/nas/
 
     # Copying mount service file >> /etc/systemd/system/
-    sudo cp -r config_files/mnt-nas.mount /etc/systemd/system/
+    sudo cp -r rpi-nas/config_files/mnt-nas.mount /etc/systemd/system/
     sudo chown root:root /etc/systemd/system/mnt-nas.mount
 
 # Set permissions
