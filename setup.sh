@@ -60,10 +60,6 @@ read -p "[first/second] " run_time
 		source ./rpi-nas/samba.sh
 		echo
 
-		# website setup (Apache required)
-		source ./rpi-nas/website.sh
-		echo
-		
 		# Grafana setup (system monitoring)
 		source ./rpi-nas/grafana.sh
 		echo

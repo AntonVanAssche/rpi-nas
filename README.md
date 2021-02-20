@@ -43,7 +43,6 @@ The following will be configured after running these scripts:
 - Static IP
 - Raid 5
 - Samba share
-- website
 
 ## Feedback
 
