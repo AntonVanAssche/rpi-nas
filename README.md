@@ -38,6 +38,7 @@ $ ./rpi-nas/setup.sh
 
 The following will be configured after running these scripts:
 - Static IP
+- Firewall
 - Raid 5
 - Samba share
 
