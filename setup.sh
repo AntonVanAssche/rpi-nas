@@ -44,9 +44,6 @@ read -p "[first/second] " run_time
 
 		echo
 
-		# Dotfiles setup
-		source ./rpi-nas/dotfiles.sh
-		echo
 
 		# Static ip setup
 		source ./rpi-nas/ip.sh

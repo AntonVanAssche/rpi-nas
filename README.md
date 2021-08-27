@@ -12,8 +12,6 @@ The following hardware is **required** to use these scripts:
 
 ## Installation
 
-**Note**: replace the git clone links with **yours**.
-
 **Warning DO NOT run the `setup.sh` script if you do not fully understand what it does. Seriously, DON'T!**
 
 ```
@@ -39,7 +37,6 @@ $ ./rpi-nas/setup.sh
 ## Configurations
 
 The following will be configured after running these scripts:
-- Dotfiles
 - Static IP
 - Raid 5
 - Samba share
