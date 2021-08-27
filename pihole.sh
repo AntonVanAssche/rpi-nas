@@ -6,7 +6,7 @@ wget https://install.pi-hole.net -P rpi-nas/pihole/
 # Execute installer
 source ./rpi-nas/pihole/index.html
 
-sudo mv rpi-nas/config_files/lighttpd.conf /etc/lighttpd/lighttpd.conf
+sudo mv rpi-nas/configs/lighttpd.conf /etc/lighttpd/lighttpd.conf
 sudo chmod 644 /etc/lighttpd/lighttpd.conf
 sudo chown root:root /etc/lighttpd/lighttpd.conf
 sudo sudo service lighttpd restart
