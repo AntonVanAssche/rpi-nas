@@ -2,20 +2,12 @@
 
 # Main install script
 
-RELEASE="$(lsb_release -is)"
+ROCK_PI_CHECK="/usr/bin/rockpi-sata/"
 
 # Script
 cd $HOME
 
 source ./rpi-nas/utils.sh
-
-# Check if OS is supported (Raspbian, Ubuntu, Debian)
-if [[ $RELEASE == "Raspbian" || $RELEASE == "Ubuntu" || $RELEASE == "Debian" ]]; then
-   message info "$RELEASE is supported!"
-else
-   message error "$RELEASE is not supported."
-   exit 1
-fi
 
 message quest "Press enter to begin installation (automatically install after 10s):"
 read -t10
