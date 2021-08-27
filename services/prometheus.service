@@ -1,5 +1,4 @@
 [Unit]
-Description=Prometheus Server
 Documentation=https://prometheus.io/docs/introduction/overview/
 After=network-online.target
 
