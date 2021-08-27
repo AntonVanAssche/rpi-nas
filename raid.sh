@@ -1,12 +1,12 @@
 #!/bin/bash
 
-echo -e "[i] ${cyan}Updating system cache...${reset}"
+message info "Updating system cache..."
 	sudo apt update &> /dev/null
 
-echo -e "[i] ${cyan}Installing mdadm...${reset}"
+message info "Installing mdadm..."
 	sudo apt-get install mdadm -y
 
-echo -e "[i] ${cyan}Setting up raid...${reset}"
+message info "Setting up raid..."
 
 	# Setup RAID-5 Volume
 	sudo blkid

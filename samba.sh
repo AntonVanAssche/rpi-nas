@@ -1,10 +1,10 @@
 #!/bin/bash
 
-echo -e "[i] ${cyan}Updating system cache...${reset}"
+message info "Updating system cache..."
         sudo apt update &> /dev/null
         sudo apt upgrade -y &> /dev/null
 
-echo -e "[i] ${cyan}Installing samba...${reset}"
+message info "Installing samba..."
         sudo apt-get install samba samba-common-bin -y
 
 # Add user:pi and share password

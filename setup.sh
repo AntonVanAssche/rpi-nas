@@ -2,93 +2,57 @@
 
 # Main install script
 
-# Colors
-bold="\e[1m"
-cyan="\e[96m"
-red="\e[91m"
-reset="\e[0m"
 RELEASE="$(lsb_release -is)"
 
 # Script
 cd $HOME
 
+source ./rpi-nas/utils.sh
+
 # Check if OS is supported (Raspbian, Ubuntu, Debian)
 if [[ $RELEASE == "Raspbian" || $RELEASE == "Ubuntu" || $RELEASE == "Debian" ]]; then
-
-    echo
-    echo -e "[i] ${cyan}$RELEASE is supported${reset}"
-
+   message info "$RELEASE is supported!"
 else
-
-    echo
-    echo -e "[!] ${red}$RELEASE is not supported${reset}"
-    echo
-    exit 1
-
+   message error "$RELEASE is not supported."
+   exit 1
 fi
 
-echo -e "[i] ${cyan}This script will setup the pi as a home server ${reset}"
-echo
+message quest "Press enter to begin installation (automatically install after 10s):"
+read -t10
 
-echo -e "[?] ${cyan}Is this the first or second time you run the script?${reset}"
-read -p "[first/second] " run_time
-	if [[ $run_time = first ]] ; then
+ASK_FOR_SUDO
 
-		echo
+message quest "Is this the first or second time you run the script? [first/second]"
+read -p " " RUN_TIME
+   if [[ $RUN_TIME = "first" ]] ; then
+      
+	  #Install NECESSARY packages
+	  source ./rpi-nas/packages.sh
 
-		# Install NECESSARY packages
-		source ./rpi-nas/packages.sh
-		echo
+   elif [[ $RUN_TIME = "second" ]] ; then
 
-	elif [[ $run_time = second ]] ; then
+	  # Static ip setup
+	  source ./rpi-nas/ip.sh
 
-		echo
+	  # RAID 5 configuration
+	  source ./rpi-nas/raid.sh
 
+	  # Samba share setup
+	  source ./rpi-nas/samba.sh
 
-		# Static ip setup
-		source ./rpi-nas/ip.sh
-		echo
+	  # Grafana setup (system monitoring)
+	  source ./rpi-nas/grafana.sh
 
-		# RAID 5 configuration
-		source ./rpi-nas/raid.sh
-		echo
+	  # Pihole setup
+	  source ./rpi-nas/pihole.sh
 
-		# Samba share setup
-		source ./rpi-nas/samba.sh
-		echo
-
-		# Grafana setup (system monitoring)
-		source ./rpi-nas/grafana.sh
-		echo
-
-		# Pihole setup
-		source ./rpi-nas/pihole.sh
-		echo
-
-		# Pivpn setup
-		source ./rpi-nas/pivpn.sh
-		echo
+	  # Pivpn setup
+	  source ./rpi-nas/pivpn.sh
 
 	else
-        
-		echo
-		echo -e "[!] ${red}Script failed to run.${reset}"
-		echo -e "[!] ${red}Invalid argument! ${bold}($run_time)${reset}"
-		
-		# Exit code: invalid argument to exit
-		exit 128
+		message error "Unknown option: $RUN_TIME"
+		exit 22
 
 	fi
 
-echo -e "[?] ${cyan}Do you want to reboot the system? (recommended)${reset}"
-read -p "[y/n] " reboot
-	if [[ $reboot = y || $reboot = Y ]] ; then
-
-		sleep 2
-		sudo systemctl reboot
-
-    else
-		
-		echo -e "${cyan}[i] System won't rebooten!${reset}"
-
-	fi
+REBOOT

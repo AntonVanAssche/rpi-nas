@@ -5,12 +5,12 @@ VERSION_GRAFANA='7.3.6'
 VERSION_PROMETHEUS='2.24.0'
 VERSION_NODE_EPORTER='1.0.1'
 
-echo -e "[i] ${cyan}Installing grafana/prometheus. ${reset}"
-echo -e "[i] ${cyan}Updating system cache... ${reset}" ; sudo apt update &> /dev/null
+message info "Installing grafana/prometheus..."
+message info "Updating system cache..." ; sudo apt update &> /dev/null
 
 # Prometheus install
 echo
-echo -e "[i] ${cyan}Installing prometheus. ${reset}"
+message info "Installing prometheus..."
 	wget https://github.com/prometheus/prometheus/releases/download/v$VERSION_PROMETHEUS/prometheus-$VERSION_PROMETHEUS.linux-armv7.tar.gz
 	tar xfz prometheus-$VERSION_PROMETHEUS.linux-armv7.tar.gz
 	rm -rf prometheus-$VERSION_PROMETHEUS.linux-armv7.tar.gz
@@ -26,7 +26,7 @@ echo -e "[i] ${cyan}Installing prometheus. ${reset}"
 
 # Grafana install
 echo
-echo -e "[i] ${cyan}Installing grafana. ${reset}"
+message info "Installing grafana..."
 	wget https://dl.grafana.com/oss/release/grafana-$VERSION_GRAFANA.linux-armv7.tar.gz
 	tar xfz grafana-$VERSION_GRAFANA.linux-armv7.tar.gz
 	rm -rf grafana-$VERSION_GRAFANA.linux-armv7.tar.gz
@@ -41,7 +41,7 @@ echo -e "[i] ${cyan}Installing grafana. ${reset}"
 
 # Node exporter install
 echo
-echo -e "[i] ${cyan}Installing node exporter. ${reset}"
+message info "Installing node exporter..."
 	wget https://github.com/prometheus/node_exporter/releases/download/$VERSION_NODE_EPORTER/node_exporter-$VERSION_NODE_EPORTER.linux-armv7.tar.gz
 	tar xfz node_exporter-$VERSION_NODE_EPORTER.linux-armv7.tar.gz
 	rm -rf node_exporter-$VERSION_NODE_EPORTER.linux-armv7.tar.gz

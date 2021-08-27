@@ -1,19 +1,19 @@
 #!/bin/bash
 
-echo -e "[i] ${cyan}Updating system cache...${reset}"
+message info "Updating system cache..."
 	sudo apt update &> /dev/null
 	sudo apt upgrade -y &> /dev/null
 
-echo -e "[i] ${cyan}Installing wget & curl...${reset}"
+message info "Installing wget & curl..."
 	sudo apt install wget curl -y &> /dev/null
 
-echo -e "[i] ${cyan}Installing htop...${reset}"
+message info "Installing htop..."
 	sudo apt install htop -y &> /dev/null
 
-echo -e "[i] ${cyan}Installing vim...${reset}"
+message info "Installing vim..."
 	sudo apt install vim -y &> /dev/null
 
-echo -e "[i] ${cyan}Installing SATA-hat software...${reset}"
+message info "Installing SATA-hat software..."
 	wget -q https://rock.sh/get-rockpi-sata -P rpi-nas/get-rockpi-sata/
 	sudo chmod +x rpi-nas/get-rockpi-sata/get-rockpi-sata
 	source ./rpi-nas/get-rockpi-sata/get-rockpi-sata
