@@ -27,7 +27,6 @@ $ ./rpi-nas/setup.sh
 | [Grafana](https://github.com/grafana/grafana) | Data visualization platform |
 | [Prometheus](https://github.com/prometheus/prometheus) | Data scource for Grafana |
 | [Node-exporter](https://github.com/prometheus/node_exporter) | Exporter for machine metrics |
-| [Apache](https://github.com/ceph/apache2) |  Apache HTTP Server |
 | [Samba](https://github.com/samba-team/samba) | File sharing software using the SMB-protocol |
 | [Vim](https://github.com/vim/vim) | Text editor |
 | [SATA-hat software](https://github.com/akgnah/rockpi-sata) | Necessary software in order to use the SATA hat |
@@ -44,7 +43,7 @@ The following will be configured after running these scripts:
 
 ## Feedback
 
-These scripts aren't perfect therefore suggestions/improvements are always [welcome](https://gitlab.com/sudo_TuX/rpi-nas/-/issues)!
+These scripts aren't perfect therefore suggestions/improvements are always [welcome](https://github.com/TuX-sudo/rpi-nas/issues)!
 
 ## License
 
