@@ -14,7 +14,7 @@ sudo smbpasswd -a pi
 sudo cp /etc/samba/smb.conf /etc/samba/smb.conf.bak
 
 # echo settings >> /etc/samba/smb.conf
-sudo echo "
+echo "
 # NAS Share
 [NAS]
 path = /mnt/nas/
@@ -23,7 +23,8 @@ valid users = pi
 writable = yes
 browsable = yes
 create mask = 0644
-directory mask = 0755" >> /etc/samba/smb.conf
+directory mask = 0755
+" | sudo tee -a /etc/samba/smb.conf
 
 # Restarting samba
 sudo systemctl restart smbd
