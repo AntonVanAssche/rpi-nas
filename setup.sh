@@ -7,6 +7,15 @@ set -e
 
 DIR="$HOME/rpi-nas"
 
+DATE=$(date +"%d-%m-%Y")
+TIME=$(date +"%T")
+
+LOG_DIR="$DIR/log"
+LOG_FILE="$LOG_DIR/$DATE-$TIME.log"
+
+# Create the LOG_DIR if no exists.
+mkdir -p $LOG_DIR
+
 ROCK_PI_CHECK="/usr/bin/rockpi-sata/"
 
 # Script
