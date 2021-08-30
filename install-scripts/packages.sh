@@ -14,8 +14,8 @@ message info "Installing vim..."
 	sudo apt install vim -y &> /dev/null
 
 message info "Installing SATA-hat software..."
-	wget -q https://rock.sh/get-rockpi-sata -P rpi-nas/get-rockpi-sata/
+	wget -q https://rock.sh/get-rockpi-sata -P $DIR/get-rockpi-sata/
 	sudo chmod +x rpi-nas/get-rockpi-sata/get-rockpi-sata
-	source ./rpi-nas/get-rockpi-sata/get-rockpi-sata
-    sudo mv config_files/rockpi-sata.conf /etc/
+	source ./$DIR/get-rockpi-sata/get-rockpi-sata
+    sudo mv $DIR/configs/rockpi-sata.conf /etc/
     sudo chown root:root /etc/rockpi-sata.conf

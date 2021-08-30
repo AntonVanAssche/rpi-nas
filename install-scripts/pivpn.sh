@@ -4,4 +4,4 @@
 wget https://install.pivpn.io -P rpi-nas/pivpn/
 
 # Execute installer
-source ./rpi-nas/pivpn/index.html
+source ./$DIR/pivpn/index.html

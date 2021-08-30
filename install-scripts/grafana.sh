@@ -27,9 +27,9 @@ sudo mv node_exporter-"$NODE_EXPORTER_VERSION".linux-armv7/ node_exporter/
 sudo mv prometheus/ /usr/sbin/
 sudo mv node_exporter/ /usr/sbin/
 
-sudo cp -r ./configs/prometheus.yml /usr/sbin/prometheus/
-sudo cp -r ./services/prometheus.service /etc/systemd/system/prometheus.service
-sudo cp -r ./services/node_exporter.service /etc/systemd/system/node_exporter.service
+sudo cp -r ./$DIR/configs/prometheus.yml /usr/sbin/prometheus/
+sudo cp -r ./$DIR/services/prometheus.service /etc/systemd/system/prometheus.service
+sudo cp -r ./$DIR/services/node_exporter.service /etc/systemd/system/node_exporter.service
 
 sudo chown -R root:root /usr/sbin/prometheus/ /usr/sbin/node_exporter/ /etc/systemd/system/prometheus.service /etc/systemd/system/node_exporter.service
 
