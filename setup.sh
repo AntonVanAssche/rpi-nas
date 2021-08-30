@@ -2,6 +2,8 @@
 
 # Main install script
 
+# Abort if error.
+set -e
 
 DIR="$HOME/rpi-nas"
 
