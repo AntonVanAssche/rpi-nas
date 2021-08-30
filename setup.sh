@@ -23,6 +23,8 @@ cd $HOME
 
 source ./$DIR/install-scripts/utils.sh
 
+OS_CHECK
+
 message quest "Press enter to begin installation (automatically install after 10s):"
 read -t10
 
