@@ -14,14 +14,14 @@ The following hardware is **required** to use these scripts:
 - 4x 2.5 inch hdd
 ## Installation
 
-**Warning DO NOT run the `setup.sh` script if you do not fully understand what it does. Seriously, DON'T!**
+**Warning DO NOT run the `install.sh` script if you do not fully understand what it does. Seriously, DON'T!**
 
-You will have to run the `setup.sh` twice. The first time it will install all the necessary packages after that it will ask to reboot the system. When the system is back online run the `setup.sh` for the second time, the script should automatically detect if it's running for the second time and will configure the network setting and much more.
+You will have to run the `install.sh` twice. The first time it will install all the necessary packages after that it will ask to reboot the system. When the system is back online run the `install.sh` for the second time, the script should automatically detect if it's running for the second time and will configure the network setting and much more.
 
 ```
 $ git clone https://gitlab.com/sudo_TuX/rpi-nas
 $ chmod +x rpi-nas/*.sh
-$ ./rpi-nas/setup.sh
+$ ./rpi-nas/install.sh
 ```
 
 ## Programs
