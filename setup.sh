@@ -25,36 +25,42 @@ source ./$DIR/install-scripts/utils.sh
 
 OS_CHECK
 
-message quest "Press enter to begin installation (automatically install after 10s):"
-read -t10
+function MAIN() {
 
-ASK_FOR_SUDO
+   message quest "Press enter to begin installation (automatically install after 10s):"
+   read -t10
 
-if [ ! -d "$ROCK_PI_CHECK" ]; then
+   ASK_FOR_SUDO
 
-   #Install NECESSARY packages
-   source ./$DIR/install-scripts/packages.sh
+   if [ ! -d "$ROCK_PI_CHECK" ]; then
 
-elif [ -d "$ROCK_PI_CHECK" ]; then
+      #Install NECESSARY packages
+      source ./$DIR/install-scripts/packages.sh
 
-   # Static ip setup
-   source ./$DIR/install-scripts/ip.sh
+   elif [ -d "$ROCK_PI_CHECK" ]; then
+
+      # Static ip setup
+      source ./$DIR/install-scripts/ip.sh
    
-   # RAID 5 configuration
-   source ./$DIR/install-scripts/raid.sh
+      # RAID 5 configuration
+      source ./$DIR/install-scripts/raid.sh
 
-   # Samba share setup
-   source ./$DIR/install-scripts/samba.sh
+      # Samba share setup
+      source ./$DIR/install-scripts/samba.sh
 
-   # Grafana setup (system monitoring)
-   source ./$DIR/install-scripts/grafana.sh
+      # Grafana setup (system monitoring)
+      source ./$DIR/install-scripts/grafana.sh
 
-   # Pihole setup
-   source ./$DIR/install-scripts/pihole.sh
+      # Pihole setup
+      source ./$DIR/install-scripts/pihole.sh
 
-   # Pivpn setup
-   source ./$DIR/install-scripts/pivpn.sh
+      # Pivpn setup
+      source ./$DIR/install-scripts/pivpn.sh
 
-fi
+   fi
 
-REBOOT
+   REBOOT
+
+}
+
+MAIN | tee -a "$LOG_FILE"
