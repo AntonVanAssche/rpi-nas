@@ -40,10 +40,10 @@ $ ./rpi-nas/install.sh
 ## Configurations
 
 The following will be configured after running these scripts:
-- [Static IP](./ip.sh)
-- [Firewall](./ip.sh)
-- [Raid 5](./raid.sh)
-- [Samba share](./samba.sh)
+- [Static IP](./install-scripts/ip.sh)
+- [Firewall](./install-scripts/ip.sh)
+- [Raid 5](./install-scripts/raid.sh)
+- [Samba share](./install-scripts/samba.sh)
 
 ## Feedback
 
