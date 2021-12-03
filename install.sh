@@ -5,7 +5,7 @@
 # Abort if error.
 set -e
 
-dir="$HOME/rpi-nas"
+dir="$(pwd)"
 
 date=$(date +"%d-%m-%Y")
 time=$(date +"%T")
