@@ -57,6 +57,11 @@ function main() {
       # Pivpn setup
       source $dir/install-scripts/pivpn.sh
 
+   else
+      
+      message error "Failed to locate $rockPiCheck"
+      exit 1
+
    fi
 
    rebootSystem
