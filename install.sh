@@ -63,4 +63,4 @@ function main() {
 
 }
 
-main | tee -a "$logFile"
+main 2>&1 | tee -a "$logFile"
