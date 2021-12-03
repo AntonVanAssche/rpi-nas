@@ -5,62 +5,62 @@
 # Abort if error.
 set -e
 
-DIR="$HOME/rpi-nas"
+dir="$HOME/rpi-nas"
 
-DATE=$(date +"%d-%m-%Y")
-TIME=$(date +"%T")
+date=$(date +"%d-%m-%Y")
+time=$(date +"%T")
 
-LOG_DIR="$DIR/log"
-LOG_FILE="$LOG_DIR/$DATE-$TIME.log"
+lofDir="$dir/log"
+logFile="$lofDir/$date-$time.log"
 
-# Create the LOG_DIR if no exists.
-mkdir -p $LOG_DIR
+# Create the LOG_dir if no exists.
+mkdir -p $logDir
 
-ROCK_PI_CHECK="/usr/bin/rockpi-sata/"
+rockPiCheck="/usr/bin/rockpi-sata/"
 
 # Script
 cd $HOME
 
-source ./$DIR/install-scripts/utils.sh
+source $dir/install-scripts/utils.sh
 
-OS_CHECK
+osCheck
 
-function MAIN() {
+function main() {
 
    message quest "Press enter to begin installation (automatically install after 10s):"
    read -t10
 
-   ASK_FOR_SUDO
+   askForSudo
 
-   if [ ! -d "$ROCK_PI_CHECK" ]; then
+   if [ ! -d "$rockPiCheck" ]; then
 
       #Install NECESSARY packages
-      source ./$DIR/install-scripts/packages.sh
+      source $dir/install-scripts/packages.sh
 
-   elif [ -d "$ROCK_PI_CHECK" ]; then
+   elif [ -d "$rockPiCheck" ]; then
 
       # Static ip setup
-      source ./$DIR/install-scripts/ip.sh
+      source $dir/install-scripts/ip.sh
    
       # RAID 5 configuration
-      source ./$DIR/install-scripts/raid.sh
+      source $dir/install-scripts/raid.sh
 
       # Samba share setup
-      source ./$DIR/install-scripts/samba.sh
+      source $dir/install-scripts/samba.sh
 
       # Grafana setup (system monitoring)
-      source ./$DIR/install-scripts/grafana.sh
+      source $dir/install-scripts/grafana.sh
 
       # Pihole setup
-      source ./$DIR/install-scripts/pihole.sh
+      source $dir/install-scripts/pihole.sh
 
       # Pivpn setup
-      source ./$DIR/install-scripts/pivpn.sh
+      source $dir/install-scripts/pivpn.sh
 
    fi
 
-   REBOOT
+   rebootSystem
 
 }
 
-MAIN | tee -a "$LOG_FILE"
+main | tee -a "$logFile"

@@ -1,18 +1,18 @@
 #!/bin/bash
 
 message quest "IP address (example: 192.168.0.100): "
-read -p " " IP
+read -p " " ip
 
 message quest "Subnet prefix (example: 24): "
-read -p " " SUBNET
+read -p " " subnet
 
 message quest "Gateway (example: 192.168.0.1): "
-read -p " " GATEWAY
+read -p " " gateway
 
 echo "
 interface eth0
-static ip_address=$IP/$SUBNET
-static routers=$GATEWAY
+static ip_address=$ip/$subnet
+static routers=$gateway
 static domain_name_servers=1.1.1.1 1.0.0.1
 " | sudo tee -a /etc/dhcpcd.conf
 
