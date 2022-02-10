@@ -20,7 +20,7 @@ The following hardware is **required** to use these scripts:
 You will have to run the `install.sh` twice. The first time it will install all the necessary packages after that it will ask to reboot the system. When the system is back online run the `install.sh` for the second time, the script should automatically detect if it's running for the second time and will configure the network setting and much more.
 
 ```
-$ git clone https://github.com/TuX-sudo/rpi-nas.git
+$ git clone https://github.com/AntonVanAssche/rpi-nas.git
 $ chmod +x rpi-nas/*.sh
 $ ./rpi-nas/install.sh
 ```
@@ -49,7 +49,7 @@ The following will be configured after running these scripts:
 
 ## Feedback
 
-These scripts aren't perfect therefore suggestions/improvements are always [welcome](https://github.com/TuX-sudo/rpi-nas/issues)!
+These scripts aren't perfect therefore suggestions/improvements are always [welcome](https://github.com/AntonVanAssche/rpi-nas/issues)!
 
 ## License
 
