@@ -16,9 +16,7 @@ message info "Setting up raid..."
 	sudo mdadm --detail /dev/md0
 	
 	# Save RAID array
-	sudo -i
-	sudo mdadm --detail --scan >> /etc/mdadm/mdadm.conf
-	exit
+	sudo mdadm --detail --scan | sudo tee -a /etc/mdadm/mdadm.conf
 
 	# Create File system
 	sudo mkfs.ext4 -v -m .1 -b 4096 -E stride=32,stripe-width=64 /dev/md0
