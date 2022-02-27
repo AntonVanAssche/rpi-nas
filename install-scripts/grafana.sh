@@ -1,8 +1,8 @@
 #!/bin/bash
 
-grafanaVersion="8.1.2"
-prometheusVersion="2.29.1"
-nodeExporterVersion="1.2.2"
+grafanaVersion="8.4.2"
+prometheusVersion="2.33.3"
+nodeExporterVersion="1.3.1"
 
 message info "Installing Grafana-server..."
 sudo apt-get install -y adduser libfontconfig1
